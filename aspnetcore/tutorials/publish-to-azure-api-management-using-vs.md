@@ -18,6 +18,33 @@ By [Matt Soucoup](https://twitter.com/codemillmatt)
 * Open a [free Azure account](https://azure.microsoft.com/free/dotnet/) if you don't have one.
 * [Create a new Azure API Management instance](/azure/api-management/get-started-create-service-instance) if you have not already.
 
+- create a new web api app
+- name it weatherapi
+- install swashbuckle.aspnet.core
+- in `configureservices` add in `services.AddSwaggerGen`
+- in `configure` add `app.UseSwagger()`
+- in launchsettings.json - change the `launchurl` to a blank string
+- remove the route from the controller class
+- add it to the GET `[Route("/")]`
+
+- Run the application
+
+- Publish the app
+    - To the API Management selection on the VS publish screen
+    - create a blank api
+    - display name: WeatherForecasts, leave name alone
+    - url suffix of `v1`
+    - Should now be able to browse to it
+- Show API in the portal
+
+(this could be under update the app)
+- To the `AddSwaggerGen` portion of the `ConfigureServices` add in (maybe make these steps as part of the configure services above)
+    - `config.SwaggerDoc`
+    - Put the name in the pub xml
+    
+- cleanup
+
+
 ## Create a web app
 
 In the Visual Studio Start Page, select **File > New > Project...**
